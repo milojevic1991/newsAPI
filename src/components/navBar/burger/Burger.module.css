@@ -1,0 +1,25 @@
+.burger {
+  margin-right: 5px;
+}
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.active .line1 {
+  transform: rotate(-45deg) translate(-7px, 2px);
+}
+.active .line2 {
+  opacity: 0;
+}
+.active .line3 {
+  transform: rotate(45deg) translate(-7px, -2px);
+}
+
+@media screen and (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+}
