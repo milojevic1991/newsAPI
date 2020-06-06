@@ -11,8 +11,8 @@
 
 .newsBtn {
   color: #0f2137;
-  font-weight: 500;
-  font-size: 17px;
+  font-weight: 700;
+  font-size: 15px;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -26,11 +26,11 @@
   transition: 0.2s all;
   margin: 0 4px;
   border: none;
+  font-family: 'Quicksand', sans-serif;
 }
 .active {
-  color: #0f2137;
-  font-weight: bold;
-  font-size: 17px;
+  font-weight: 700;
+  font-size: 15px;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -41,11 +41,12 @@
   border-radius: 40px;
   background: #fff;
   cursor: pointer;
-  box-shadow: inset 3px 4px 6px #eeeeee, inset -5px -5px 9px #fcfcfc;
-  color: #1788b4;
+  box-shadow: 1px 1px 13px #e8e8e8, -3px -2px 13px #ffffff;
+  color: #0f2137;
   transition: 0.2s all;
   margin: 0 4px;
   border: none;
+  font-family: 'Quicksand', sans-serif;
 }
 button:focus {
   outline: none;

@@ -16,9 +16,13 @@
 .navLinks a {
   text-decoration: none;
   letter-spacing: -1px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
-  color: #5e5e5e;
+  color: #797979;
+  transition: all 0.2s;
+}
+.navLinks a:hover {
+  color: black;
 }
 
 .logo {

@@ -3,11 +3,6 @@ import { newsAPI } from '../../api';
 import axios from 'axios';
 
 export const topNewsAction = (country) => {
-  //   return {
-  //     type: actionsType.TEST,
-  //     payload: country,
-  //   };
-
   return async (dispatch) => {
     dispatch(fetchStart());
 
@@ -17,12 +12,6 @@ export const topNewsAction = (country) => {
     } catch (error) {
       dispatch(fetchError(error));
     }
-
-    //FAKE JSON
-    //  const result = await axios
-    //    .get('https://jsonplaceholder.typicode.com/posts')
-    //    .then((res) => res);
-    //  dispatch(fetchSuccess(result.data));
   };
 };
 
@@ -44,5 +33,19 @@ export const fetchError = (error) => {
   return {
     type: actionsType.FETCH_ERROR,
     payload: error,
+  };
+};
+
+export const readMoreBtn = (title) => {
+  return {
+    type: actionsType.READ_MORE_TOP_NEWS,
+    payload: title,
+  };
+};
+
+export const searchInput = (newsTitle) => {
+  return {
+    type: actionsType.SEARCH,
+    payload: newsTitle,
   };
 };

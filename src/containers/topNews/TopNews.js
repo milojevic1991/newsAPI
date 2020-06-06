@@ -4,37 +4,26 @@ import classes from './TopNews.module.css';
 import Loader from 'react-loader-spinner';
 import { Route } from 'react-router-dom';
 
-import Test from '../../test';
+import MainNewsGrid from '../../components/mainNewsGrid/MainNewsGrid';
 
+import Test from '../../test';
+import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../store/actions/topNews';
+import * as actionsCat from '../../store/actions/categories';
 
 const TopNews = () => {
+  // const { cat } = useParams();
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.topNewsReducer);
+  const state = useSelector((state) => state);
 
   useEffect(() => {
-    dispatch(actions.topNewsAction('gb'));
-    console.log('top news container', state);
+    // dispatch(actions.topNewsAction('gb'));
+    dispatch(actions.topNewsAction(state.topNewsReducer.isGB ? 'gb' : 'us'));
   }, [dispatch]);
 
-  console.log('newsItems', state);
-
-  return (
-    <div className={classes.topNewsWrapp}>
-      <h1>Top News from {state.isGB ? 'Great Britain' : 'USA'}</h1>
-
-      {state.finished && !state.loading ? (
-        <NewsItem topNewsData={state.topNewsArr} />
-      ) : (
-        <Loader type="Oval" color="#b0b0b0" height={100} width={100} />
-      )}
-
-      {/* <NewsItem topNewsData={state} /> */}
-      {/* <Route path="/:id" component={Test}></Route> */}
-    </div>
-    // <Route path="/:id" component={Test}></Route>
-  );
+  //
+  return <MainNewsGrid mainNewsData={state} isTopNews={true} />;
 };
 
 export default TopNews;

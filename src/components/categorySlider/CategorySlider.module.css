@@ -1,0 +1,25 @@
+.category {
+  margin-bottom: 3rem;
+  position: relative;
+}
+.sliderWrapp {
+  padding: 3rem 2rem;
+}
+
+/* .sliderWrappTittle { */
+.sliderCategory {
+  position: absolute;
+  top: 1rem;
+  left: 9rem;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  text-decoration: none;
+  color: #000;
+  text-transform: capitalize;
+  transition: all 0.3s;
+}
+
+.sliderCategory:hover {
+  transform: translateX(5px);
+}

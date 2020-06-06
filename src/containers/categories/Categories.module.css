@@ -1,0 +1,18 @@
+.categoriesWrapp {
+  width: 100%;
+  height: 90%;
+  padding: 6rem 0rem;
+  box-sizing: border-box;
+  border-radius: 0px 0px 50px 50px;
+  position: relative;
+  overflow: auto;
+}
+
+.categoriesWrapp h1 {
+  position: absolute;
+  top: 1rem;
+  left: 9rem;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}

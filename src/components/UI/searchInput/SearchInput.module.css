@@ -1,0 +1,29 @@
+.inputSearch {
+  width: 25%;
+  position: absolute;
+  top: 5rem;
+  left: 8rem;
+  margin: 1rem auto;
+  border-radius: 60px;
+  background: #f2f3f7;
+  padding: 1rem 1.5rem;
+  border: #ffdead;
+  border-radius: 41px;
+  background: #fff;
+  box-shadow: 5px 5px 17px #dcdde1, -5px -5px 17px #ffffff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 50;
+}
+
+.inputSearch:focus {
+  outline: none;
+}
+
+.inputSearch::placeholder {
+  color: #b4b4b4;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+}
