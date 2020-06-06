@@ -6,3 +6,27 @@
   font-weight: 600;
   letter-spacing: -1px;
 }
+.errorTitle {
+  font-weight: 400;
+  top: 3rem;
+  left: 8rem;
+  font-size: 22px;
+  letter-spacing: -1px;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .title {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    width: 100%;
+  }
+
+  .errorTitle {
+    font-size: 18px;
+    top: 6rem;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    width: 100%;
+    position: absolute;
+  }
+}

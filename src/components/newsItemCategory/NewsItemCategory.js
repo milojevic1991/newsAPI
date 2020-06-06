@@ -1,8 +1,9 @@
 import React from 'react';
-import classes from './NewsItemCategory.module.css';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import classes from './NewsItemCategory.module.css';
 
-import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../store/actions/categories';
 
 const NewsItemCategory = ({ newsDataCat, category }) => {
@@ -33,3 +34,8 @@ const NewsItemCategory = ({ newsDataCat, category }) => {
 };
 
 export default NewsItemCategory;
+
+NewsItemCategory.propTypes = {
+  newsDataCat: PropTypes.object.isRequired,
+  category: PropTypes.string.isRequired,
+};

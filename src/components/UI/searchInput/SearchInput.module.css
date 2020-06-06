@@ -27,3 +27,12 @@
   font-size: 15px;
   font-family: 'Quicksand', sans-serif;
 }
+
+@media only screen and (max-device-width: 1024px) {
+  .inputSearch {
+    width: 55%;
+    left: 50%;
+    top: 7rem;
+    transform: translate(-50%, 0px);
+  }
+}

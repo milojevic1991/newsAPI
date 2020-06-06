@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classes from './Burger.module.css';
 
 const Burger = ({ clickBurger, active }) => {
@@ -17,6 +18,8 @@ const Burger = ({ clickBurger, active }) => {
 };
 
 export default Burger;
-{
-  /* <div className={[classes.menuBar, classes.first].join(' ')}></div>; */
-}
+
+Burger.propTypes = {
+  clickBurger: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
+};

@@ -23,7 +23,7 @@
   border-radius: 40px;
   background: #fff;
   cursor: pointer;
-  transition: 0.2s all;
+  transition: 0.1s all;
   margin: 0 4px;
   border: none;
   font-family: 'Quicksand', sans-serif;
@@ -61,6 +61,9 @@ button:disabled {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0px);
+  }
+  .newsBtn {
+    color: #b9b9b9;
   }
   .newsBtn,
   .active {

@@ -6,7 +6,6 @@
   padding: 3rem 2rem;
 }
 
-/* .sliderWrappTittle { */
 .sliderCategory {
   position: absolute;
   top: 1rem;
@@ -22,4 +21,10 @@
 
 .sliderCategory:hover {
   transform: translateX(5px);
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .sliderWrapp {
+    padding: 3rem 0rem;
+  }
 }

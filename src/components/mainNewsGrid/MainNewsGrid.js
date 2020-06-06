@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router';
+import PropTypes from 'prop-types';
 import NewsItem from '../../components/newsItem/NewsItem';
-import classes from './MainNewsGrid.module.css';
-import Loader from 'react-loader-spinner';
 import Title from '../UI/title/Title';
 import Wrapper from '../UI/wrapper/Wrapper';
+import Loader from 'react-loader-spinner';
 
-import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../store/actions/topNews';
 import * as actionsCat from '../../store/actions/categories';
-
-import { useParams } from 'react-router';
 
 const MainNewsGrid = ({ mainNewsData, isTopNews }) => {
   const { cat } = useParams();
@@ -46,3 +45,8 @@ const MainNewsGrid = ({ mainNewsData, isTopNews }) => {
 };
 
 export default MainNewsGrid;
+
+MainNewsGrid.propTypes = {
+  mainNewsData: PropTypes.object.isRequired,
+  isTopNews: PropTypes.bool.isRequired,
+};

@@ -7,12 +7,3 @@
   position: relative;
   overflow: auto;
 }
-
-.categoriesWrapp h1 {
-  position: absolute;
-  top: 1rem;
-  left: 9rem;
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: -1px;
-}

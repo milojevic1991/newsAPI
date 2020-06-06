@@ -1,9 +1,8 @@
 .newsItemWrapp {
-  /* flex: 1; */
   position: relative;
   width: calc(100% / 5);
-  height: 400px;
-  margin: 1.5rem 3rem;
+  height: 350px;
+  margin: 1.5rem 3rem 5rem 3rem;
   flex-wrap: wrap;
   box-sizing: border-box;
   border-radius: 50px;
@@ -14,6 +13,7 @@
 .newsItemHeader {
   width: 100%;
   height: 130px;
+  overflow: hidden;
 }
 
 .newsItemWrapp img {
@@ -21,7 +21,7 @@
   height: 100%;
   border-radius: 50px 50px 0 0;
   object-fit: cover;
-  transition: all 0.7s;
+  transition: all 0.9s ease;
 }
 .newsItemWrapp img:hover {
   transform: scale(1.2);
@@ -35,6 +35,10 @@
 .newsItemWrapp p {
   font-size: 13px;
   padding: 0 6px;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .newsItemWrapp a {
   text-decoration: none;
@@ -60,4 +64,18 @@
   padding: 1rem;
   box-sizing: border-box;
   text-align: left;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1650px) {
+  .newsItemWrapp {
+    width: 33%;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .newsItemWrapp {
+    width: 100%;
+    overflow: auto;
+    margin: 1.5rem 1rem 3rem 1rem;
+  }
 }

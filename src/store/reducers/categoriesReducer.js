@@ -1,5 +1,4 @@
 import * as actionsType from '../actions/actionsType';
-import { act } from 'react-dom/test-utils';
 
 const initialState = {
   cat: [],
@@ -14,9 +13,8 @@ const categoriesReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+
     case actionsType.FETCH_SUCCESS_CAT:
-      console.log('REDUCER CAT', action.payload);
-      console.log('REDUCER CAT CATEGORY NAME', action.category);
       return {
         ...state,
         cat: [...action.payload],
@@ -24,6 +22,7 @@ const categoriesReducer = (state = initialState, action) => {
         category: action.category,
         fullView: false,
       };
+
     case actionsType.FETCH_ERROR_CAT:
       return {
         ...state,
@@ -31,14 +30,13 @@ const categoriesReducer = (state = initialState, action) => {
       };
 
     case actionsType.READ_MORE_BTN_CAT:
-      const newItemCatFull = state[action.category].filter((item) => {
-        return item.title === action.payload;
-      });
+      const newItemCatFull = state[action.category].filter(
+        (item) => item.title === action.payload
+      );
 
-      console.log('read more btn cat', newItemCatFull);
       return {
         ...state,
-        fullViewCat: newItemCatFull,
+        fullViewCat: [...newItemCatFull],
         fullView: true,
       };
 
@@ -47,6 +45,7 @@ const categoriesReducer = (state = initialState, action) => {
         ...state,
         fullView: false,
       };
+
     default:
       return state;
   }

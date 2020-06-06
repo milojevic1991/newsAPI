@@ -1,22 +1,24 @@
 import React from 'react';
-import classes from './NewsItem.module.css';
+import { useDispatch } from 'react-redux';
 import { useRouteMatch, Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-import { useSelector, useDispatch } from 'react-redux';
-
+import PropTypes from 'prop-types';
+import classes from './NewsItem.module.css';
 import * as actions from '../../store/actions/topNews';
 import * as actionsCat from '../../store/actions/categories';
+
+//Unique key
+import shortid from 'shortid';
 
 const NewsItem = ({ topNewsData }) => {
   const match = useRouteMatch();
   const { cat } = useParams();
 
-  console.log('match u news item', match.url);
   const dispatch = useDispatch();
   return (
     <>
-      {topNewsData.map((newsData, index) => (
-        <div className={classes.newsItemWrapp}>
+      {topNewsData.map((newsData) => (
+        <div key={shortid.generate()} className={classes.newsItemWrapp}>
           <div className={classes.newsItemHeader}>
             <img src={newsData.urlToImage} />
           </div>
@@ -32,8 +34,6 @@ const NewsItem = ({ topNewsData }) => {
                   : actionsCat.readMoreBtnCat(newsData.title, cat)
               )
             }
-            // to={`/${encodeURIComponent(newsData.title)}`}
-
             //Match url and add slash if app has categories
             to={`${
               match.url.length === 1 ? match.url : match.url + '/'
@@ -48,3 +48,7 @@ const NewsItem = ({ topNewsData }) => {
 };
 
 export default NewsItem;
+
+NewsItem.propTypes = {
+  topNewsData: PropTypes.array.isRequired,
+};

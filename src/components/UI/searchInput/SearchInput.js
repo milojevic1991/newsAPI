@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classes from './SearchInput.module.css';
+
 const SearchInput = ({ value, onChange }) => {
   return (
     <input
@@ -13,3 +15,8 @@ const SearchInput = ({ value, onChange }) => {
 };
 
 export default SearchInput;
+
+SearchInput.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

@@ -1,62 +1,71 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import NewsItemCategory from '../newsItemCategory/NewsItemCategory';
+import NewsItem from '../newsItem/NewsItem';
 import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-
-import { Link } from 'react-router-dom';
-
 import Loader from 'react-loader-spinner';
 import classes from './CategorySlider.module.css';
-import NewsItem from '../newsItem/NewsItem';
-import NewsItemCategory from '../newsItemCategory/NewsItemCategory';
-
 import * as actions from '../../store/actions/categories';
-import { useSelector, useDispatch } from 'react-redux';
 
-const CategorySlider = ({ country, cat }) => {
+//Unique key
+import shortid from 'shortid';
+
+const CategorySlider = ({ country, category }) => {
   const dispatch = useDispatch();
-  //   const state = useSelector((state) => state.topNewsReducer);
   const state = useSelector((state) => state.categoriesReducer);
   const stateCountry = useSelector((state) => state.topNewsReducer.isGB);
 
   useEffect(() => {
-    dispatch(actions.categoriesAction(`${country}`, `${cat}`));
+    dispatch(actions.categoriesAction(`${country}`, `${category}`));
   }, [stateCountry]);
 
   useEffect(() => {}, [stateCountry]);
 
-  //   const sliderItems =
-  //     state.finished && !state.loading
-  //       ? Object.values(state.cat).map((el) => {
-  //           return <NewsItemCategory newsDataCat={el}></NewsItemCategory>;
-  //         })
-  //       : [<Loader type="Oval" color="#b0b0b0" height={100} width={100} />];
-
-  const sliderItems = state[cat]
-    ? state[cat].map((el) => {
+  const sliderItems = state[category]
+    ? state[category].map((newsItem) => {
         return (
-          <NewsItemCategory category={cat} newsDataCat={el}></NewsItemCategory>
+          <NewsItemCategory
+            key={shortid.generate()}
+            category={category}
+            newsDataCat={newsItem}
+          ></NewsItemCategory>
         );
       })
     : [<Loader type="Oval" color="#b0b0b0" height={100} width={100} />];
 
   return (
     <div className={classes.category}>
-      {/* <h4 className={classes.sliderWrappTittle}></h4> */}
       <Link
         className={classes.sliderCategory}
         // onClick={() => dispatch(actions.readMoreBtn(newsData.title))}
         // onClick={() => console.log('cao')}
-        to={`/categories/${cat}`}
+        to={`/categories/${category}`}
       >
-        {`${cat}`}
+        {`${category}`}
       </Link>
 
       <div className={classes.sliderWrapp}>
         <Carousel
           style={{ background: 'red;' }}
           slidesPerPage={4}
-          //   value={this.state.value}
-          //   onChange={this.onChange}
+          breakpoints={{
+            850: {
+              slidesPerPage: 1,
+              arrows: false,
+            },
+            1200: {
+              slidesPerPage: 2,
+              arrows: true,
+            },
+
+            1590: {
+              slidesPerPage: 3,
+              arrows: true,
+            },
+          }}
           slides={sliderItems}
           arrows
           clickToChange
@@ -64,14 +73,11 @@ const CategorySlider = ({ country, cat }) => {
       </div>
     </div>
   );
-
-  {
-    /* {state.finished && !state.loading ? (
-        <NewsItem topNewsData={state.topNewsArr} />
-      ) : (
-        <Loader type="Oval" color="#b0b0b0" height={100} width={100} />
-      )} */
-  }
 };
 
 export default CategorySlider;
+
+CategorySlider.propTypes = {
+  country: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+};

@@ -1,4 +1,5 @@
-import React, { Children } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classes from './Wrapper.module.css';
 
 const Wrapper = ({ overflowOn = true, children }) => {
@@ -13,3 +14,8 @@ const Wrapper = ({ overflowOn = true, children }) => {
 };
 
 export default Wrapper;
+
+Wrapper.propTypes = {
+  overflowOn: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+};

@@ -73,6 +73,7 @@ function App() {
         <Route path="/search" render={(props) => <Search />} />
 
         <Route
+          // exact
           path="/:id"
           render={(props) => (
             <Article

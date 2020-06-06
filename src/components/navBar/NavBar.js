@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useRouteMatch, NavLink } from 'react-router-dom';
-import { useParams } from 'react-router';
-
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import Burger from './burger/Burger';
-import classes from './NavBar.module.css';
 import Logo from '../../assets/img/htecLogo.png';
 import NewsBtn from './newsBtn/NewsBtn';
 
-import { useSelector, useDispatch } from 'react-redux';
+import classes from './NavBar.module.css';
 
 import * as actions from '../../store/actions/topNews';
 import * as actionsCat from '../../store/actions/categories';
@@ -48,6 +46,7 @@ const NavBar = () => {
               color: 'black',
             }}
             to="/"
+            onClick={clickBurgerHandler}
           >
             Top News
           </NavLink>
@@ -58,6 +57,7 @@ const NavBar = () => {
               color: 'black',
             }}
             to="/categories"
+            onClick={clickBurgerHandler}
           >
             Categories
           </NavLink>
@@ -68,6 +68,7 @@ const NavBar = () => {
               color: 'black',
             }}
             to="/search"
+            onClick={clickBurgerHandler}
           >
             Search
           </NavLink>

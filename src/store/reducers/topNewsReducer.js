@@ -18,8 +18,8 @@ const topNewsReducer = (state = initialState, action) => {
         ...state,
         loading: true,
       };
+
     case actionsType.FETCH_SUCCESS:
-      console.log('FETC SUCCESS REDUCER', action.payload);
       return {
         ...state,
         topNewsData: [...action.payload],
@@ -29,6 +29,7 @@ const topNewsReducer = (state = initialState, action) => {
         isGB: action.isGbData,
         fullView: false,
       };
+
     case actionsType.FETCH_ERROR:
       return {
         ...state,
@@ -38,12 +39,9 @@ const topNewsReducer = (state = initialState, action) => {
       };
 
     case actionsType.READ_MORE_TOP_NEWS:
-      console.log('read dataaa', action.payload);
-
-      const newsItemFull = state.topNewsData.filter((item) => {
-        return item.title === action.payload;
-      });
-      console.log('newsItemFull', newsItemFull);
+      const newsItemFull = state.topNewsData.filter(
+        (item) => item.title === action.payload
+      );
 
       return {
         ...state,
@@ -52,14 +50,14 @@ const topNewsReducer = (state = initialState, action) => {
       };
 
     case actionsType.SEARCH:
-      console.log('SEARCH ', action.payload);
+      const searchedRes = state.topNewsData.filter((searchItem) =>
+        searchItem.title.toLowerCase().includes(action.payload.toLowerCase())
+      );
 
       return {
         ...state,
         searchTerm: action.payload,
-        searchResults: state.topNewsData.filter((searchItem) =>
-          searchItem.title.toLowerCase().includes(action.payload.toLowerCase())
-        ),
+        searchResults: [...searchedRes],
       };
 
     default:

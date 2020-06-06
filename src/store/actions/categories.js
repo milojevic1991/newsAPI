@@ -3,11 +3,6 @@ import { newsAPI } from '../../api';
 import axios from 'axios';
 
 export const categoriesAction = (country, category) => {
-  //   return {
-  //     type: actionsType.TEST,
-  //     payload: country,
-  //   };
-
   return async (dispatch) => {
     dispatch(fetchStartCat());
 
@@ -51,7 +46,7 @@ export const readMoreBtnCat = (title, category) => {
   };
 };
 
-//Enagles Country search
+//Enables country search - reminder
 export const readMoreBtnCatEnable = () => {
   return {
     type: actionsType.READ_MORE_BTN_CAT_ENABLE,

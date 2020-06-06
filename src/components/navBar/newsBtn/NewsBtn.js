@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classes from './NewsBtn.module.css';
 
 const NewsBtn = ({
@@ -30,3 +31,10 @@ const NewsBtn = ({
 };
 
 export default NewsBtn;
+
+NewsBtn.propTypes = {
+  newsBtnClick: PropTypes.func.isRequired,
+  newsBtnActiveGB: PropTypes.bool.isRequired,
+  isDisabled: PropTypes.bool,
+  isDisabledCat: PropTypes.bool,
+};
