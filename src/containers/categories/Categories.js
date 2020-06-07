@@ -20,8 +20,8 @@ const Categories = () => {
     { country: countryShort, category: 'sports' },
     { country: countryShort, category: 'technology' },
     { country: countryShort, category: 'science' },
-    // { country: countryShort, category: 'business' },
-    // { country: countryShort, category: 'health' },
+    { country: countryShort, category: 'business' },
+    { country: countryShort, category: 'health' },
   ];
 
   useEffect(() => {
