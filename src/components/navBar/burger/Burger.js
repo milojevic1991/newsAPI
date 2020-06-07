@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './Burger.module.css';
 
+/**
+ * Mobile burger.
+ */
+
 const Burger = ({ clickBurger, active }) => {
   return (
     <div

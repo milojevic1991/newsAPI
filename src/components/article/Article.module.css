@@ -6,7 +6,7 @@
   height: 400px;
   object-fit: cover;
 }
-.articleWrapp h2 {
+.articleWrapp h1 {
   padding: 10px 0px 0px 2rem;
 }
 .articleWrapp p {

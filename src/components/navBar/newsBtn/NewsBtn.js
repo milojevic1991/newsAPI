@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './NewsBtn.module.css';
 
+/**
+ * Buttons Country component on header. Change the API country call when clicked.
+ */
+
 const NewsBtn = ({
   newsBtnClick,
   newsBtnActiveGB,

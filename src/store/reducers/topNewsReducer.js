@@ -24,6 +24,7 @@ const topNewsReducer = (state = initialState, action) => {
         ...state,
         topNewsData: [...action.payload],
         searchResults: [...action.payload],
+
         loading: false,
         finished: true,
         isGB: action.isGbData,
@@ -47,6 +48,12 @@ const topNewsReducer = (state = initialState, action) => {
         ...state,
         articleData: [...newsItemFull],
         fullView: true,
+      };
+
+    case actionsType.READ_MORE_BTN_ENABLE:
+      return {
+        ...state,
+        fullView: false,
       };
 
     case actionsType.SEARCH:

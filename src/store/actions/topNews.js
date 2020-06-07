@@ -42,6 +42,12 @@ export const readMoreBtn = (title) => {
     payload: title,
   };
 };
+//Enables country search - reminder
+export const readMoreBtnEnable = () => {
+  return {
+    type: actionsType.READ_MORE_BTN_ENABLE,
+  };
+};
 
 export const searchInput = (newsTitle) => {
   return {

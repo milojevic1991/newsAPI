@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NewsItem from '../../components/newsItem/NewsItem';
 import Wrapper from '../../components/UI/wrapper/Wrapper';
@@ -6,6 +6,11 @@ import Title from '../../components/UI/title/Title';
 import SearchInput from '../../components/UI/searchInput/SearchInput';
 import Loader from 'react-loader-spinner';
 import * as actions from '../../store/actions/topNews';
+import * as actionsCat from '../../store/actions/categories';
+
+/**
+ * Search Main component. Displays searched results.
+ */
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -15,9 +20,8 @@ const Search = () => {
 
   useEffect(() => {
     dispatch(actions.topNewsAction(state.isGB ? 'gb' : 'us'));
-  }, [dispatch]);
-
-  // useEffect(() => {}, [state]);
+    dispatch(actionsCat.readMoreBtnCatEnable());
+  }, [dispatch, state.isGB]);
 
   const onChangeHandler = (e) => {
     const { value } = e.target;

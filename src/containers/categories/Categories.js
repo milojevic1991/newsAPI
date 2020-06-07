@@ -1,32 +1,32 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import classes from './Categories.module.css';
 import Title from '../../components/UI/title/Title';
 import CategorySlider from '../../components/categorySlider/CategorySlider';
-import * as actions from '../../store/actions/categories';
+import * as actions from '../../store/actions/topNews';
+import * as actionCat from '../../store/actions/categories';
 
-//Unique key
-import shortid from 'shortid';
+/**
+ * Category Main component.Displays all the slider from categories.
+ */
 
 const Categories = () => {
-  const dispatch = useDispatch();
-
-  const { id } = useParams();
   const state = useSelector((state) => state.topNewsReducer.isGB);
 
+  const dispatch = useDispatch();
   let countryShort = state ? 'gb' : 'us';
 
   const CATEGORY_DATA = [
     { country: countryShort, category: 'sports' },
     { country: countryShort, category: 'technology' },
     { country: countryShort, category: 'science' },
-    { country: countryShort, category: 'business' },
-    { country: countryShort, category: 'health' },
+    // { country: countryShort, category: 'business' },
+    // { country: countryShort, category: 'health' },
   ];
 
   useEffect(() => {
-    dispatch(actions.readMoreBtnCatEnable());
+    dispatch(actions.readMoreBtnEnable());
+    dispatch(actionCat.readMoreBtnCatEnable());
   }, [dispatch]);
 
   return (

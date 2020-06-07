@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
 import topNewsReducer from './store/reducers/topNewsReducer';
 import categoriesReducer from './store/reducers/categoriesReducer';
-
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

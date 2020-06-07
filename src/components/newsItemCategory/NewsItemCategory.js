@@ -3,8 +3,11 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classes from './NewsItemCategory.module.css';
-
 import * as actions from '../../store/actions/categories';
+
+/**
+ *  News item for Categories page.
+ */
 
 const NewsItemCategory = ({ newsDataCat, category }) => {
   const dispatch = useDispatch();
@@ -13,7 +16,7 @@ const NewsItemCategory = ({ newsDataCat, category }) => {
     <>
       <div className={classes.newsDataCatWrapp}>
         <div className={classes.newsDataCatHeader}>
-          <img src={newsDataCat.urlToImage} />
+          <img src={newsDataCat.urlToImage} alt="NewsImage" />
         </div>
         <h4>{newsDataCat.title}</h4>
         <Link

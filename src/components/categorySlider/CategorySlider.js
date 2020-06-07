@@ -3,26 +3,25 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import NewsItemCategory from '../newsItemCategory/NewsItemCategory';
-import NewsItem from '../newsItem/NewsItem';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import Loader from 'react-loader-spinner';
 import classes from './CategorySlider.module.css';
 import * as actions from '../../store/actions/categories';
-
-//Unique key
 import shortid from 'shortid';
 
+/**
+ * Slider component with news items. Displayed on the Categories page.
+ */
+
 const CategorySlider = ({ country, category }) => {
-  const dispatch = useDispatch();
   const state = useSelector((state) => state.categoriesReducer);
-  const stateCountry = useSelector((state) => state.topNewsReducer.isGB);
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    //When render, calls API
     dispatch(actions.categoriesAction(`${country}`, `${category}`));
-  }, [stateCountry]);
-
-  useEffect(() => {}, [stateCountry]);
+  }, [dispatch, country, category]);
 
   const sliderItems = state[category]
     ? state[category].map((newsItem) => {
@@ -37,13 +36,8 @@ const CategorySlider = ({ country, category }) => {
     : [<Loader type="Oval" color="#b0b0b0" height={100} width={100} />];
 
   return (
-    <div className={classes.category}>
-      <Link
-        className={classes.sliderCategory}
-        // onClick={() => dispatch(actions.readMoreBtn(newsData.title))}
-        // onClick={() => console.log('cao')}
-        to={`/categories/${category}`}
-      >
+    <section className={classes.category}>
+      <Link className={classes.sliderCategory} to={`/categories/${category}`}>
         {`${category}`}
       </Link>
 
@@ -71,7 +65,7 @@ const CategorySlider = ({ country, category }) => {
           clickToChange
         />
       </div>
-    </div>
+    </section>
   );
 };
 

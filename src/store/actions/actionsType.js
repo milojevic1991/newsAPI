@@ -4,6 +4,7 @@ export const FETCH_START = 'FETCH_START';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_ERROR = 'FETCH_ERROR';
 export const READ_MORE_TOP_NEWS = 'READ_MORE_TOP_NEWS';
+export const READ_MORE_BTN_ENABLE = 'READ_MORE_BTN_ENABLE';
 export const IS_ACTIVE = 'IS_ACTIVE';
 export const SEARCH = 'SEARCH';
 

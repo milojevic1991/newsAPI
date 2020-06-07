@@ -4,12 +4,12 @@ import classes from './Wrapper.module.css';
 
 const Wrapper = ({ overflowOn = true, children }) => {
   return (
-    <div
+    <section
       style={{ overflow: overflowOn ? 'auto' : 'unset' }}
       className={classes.wrapper}
     >
       {children}
-    </div>
+    </section>
   );
 };
 
