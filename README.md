@@ -8,9 +8,9 @@
     Hi HTEC, this is short documentation of NewsAPI project. 
 </p>
 
-![demo](https://s7.gifyu.com/images/screen-capture-1.gif)
+![demo](https://i.ibb.co/9HNsny5/Htec.png)
 
-## :beginner About
+## 🚨 About
 
 NewsAPI Project built with React(Hooks)/Redux/CSS modules. Displays top news from GB and UK, with business, health, science, sports, and technology categories. Comes with the search function.
 
