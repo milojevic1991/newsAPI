@@ -15,8 +15,6 @@ const categoriesReducer = (state = initialState, action) => {
       };
 
     case actionsType.FETCH_SUCCESS_CAT:
-      console.log('payload ', action.payload);
-      console.log('payload ', action.category);
       return {
         ...state,
         cat: [...action.payload],
