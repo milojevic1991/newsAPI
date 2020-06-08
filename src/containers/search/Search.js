@@ -27,7 +27,6 @@ const Search = () => {
     const { value } = e.target;
     dispatch(actions.searchInput(value));
     setSearchValue(value);
-    console.log(value);
   };
 
   const searchResults =
