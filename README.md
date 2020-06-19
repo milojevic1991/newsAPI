@@ -5,7 +5,7 @@
  nmilojevic.com 
 </h1>
 <p align="center">
-    Hi HTEC, this is short documentation of NewsAPI project. 
+    Hi, this is short documentation of NewsAPI project. 
 </p>
 
 ![demo](https://i.ibb.co/9HNsny5/Htec.png)
