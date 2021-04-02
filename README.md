@@ -8,7 +8,7 @@
     Hi, this is short documentation of NewsAPI project. 
 </p>
 
-![demo](https://i.ibb.co/9HNsny5/Htec.png)
+![demo](https://i.imgur.com/aJmwVUz.png)
 
 ## 🚨 About
 
